@@ -44,11 +44,11 @@ Running main() from gtest_main.cc
 
 
 
-% gcov -b Coverage3.c++ | grep -A 5 "File 'Coverage3.c++'"
+% gcov-4.8 -b Coverage3.c++ | grep -A 5 "File 'Coverage3.c++'"
 File 'Coverage3.c++'
-Lines executed:100.00% of 11
-Branches executed:68.00% of 25
-Taken at least once:40.00% of 25
-No calls
-Coverage3.c++:creating 'Coverage3.c++.gcov'
+Lines executed:100.00% of 12
+Branches executed:71.43% of 28
+Taken at least once:42.86% of 28
+Calls executed:52.00% of 25
+Creating 'Coverage3.c++.gcov'
 */
