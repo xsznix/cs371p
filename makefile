@@ -106,6 +106,9 @@ sync:
     --include "Hello.c++"                    \
     --include "Docker.sh"                    \
     --include "Assertions.c++"               \
+    --exclude "*"                            \
+    ../../examples/c++/ examples
+	@rsync -r -t -u -v --delete              \
     --include "UnitTests1.c++"               \
     --include "UnitTests2.c++"               \
     --include "UnitTests3.c++"               \
@@ -113,7 +116,7 @@ sync:
     --include "Coverage2.c++"                \
     --include "Coverage3.c++"                \
     --exclude "*"                            \
-    ../../examples/c++/ examples
+    ../../exercises/c++/ exercises
 
 test:
 	make clean
