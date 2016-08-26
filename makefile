@@ -106,6 +106,12 @@ sync:
     --include "Hello.c++"                    \
     --include "Docker.sh"                    \
     --include "Assertions.c++"               \
+    --include "UnitTests1.c++"               \
+    --include "UnitTests2.c++"               \
+    --include "UnitTests3.c++"               \
+    --include "Coverage1.c++"                \
+    --include "Coverage2.c++"                \
+    --include "Coverage3.c++"                \
     --exclude "*"                            \
     ../../examples/c++/ examples
 
