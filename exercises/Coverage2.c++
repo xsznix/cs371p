@@ -46,9 +46,9 @@ Running main() from gtest_main.cc
 
 % gcov -b Coverage2.c++ | grep -A 5 "File 'Coverage2.c++'"
 File 'Coverage2.c++'
-Lines executed:91.67% of 12
-Branches executed:71.43% of 28
-Taken at least once:39.29% of 28
-Calls executed:52.00% of 25
-Creating 'Coverage2.c++.gcov'
+Lines executed:90.91% of 11
+Branches executed:68.00% of 25
+Taken at least once:36.00% of 25
+No calls
+Coverage2.c++:creating 'Coverage2.c++.gcov'
 */

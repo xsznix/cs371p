@@ -44,20 +44,11 @@ Running main() from gtest_main.cc
 
 
 
-% gcov --version
-gcov (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4
-Copyright (C) 2013 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.
-There is NO warranty; not even for MERCHANTABILITY or
-FITNESS FOR A PARTICULAR PURPOSE.
-
-
-
 % gcov -b Coverage1.c++ | grep -A 5 "File 'Coverage1.c++'"
 File 'Coverage1.c++'
-Lines executed:100.00% of 2
-Branches executed:60.00% of 20
-Taken at least once:30.00% of 20
-Calls executed:56.52% of 23
-Creating 'Coverage1.c++.gcov'
+Lines executed:63.64% of 11
+Branches executed:60.00% of 25
+Taken at least once:28.00% of 25
+No calls
+Coverage1.c++:creating 'Coverage1.c++.gcov'
 */
