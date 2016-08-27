@@ -1,5 +1,3 @@
-# http://stackoverflow.com/questions/31176997/what-does-clang-check-do-without-analyze-option
-
 FILES :=                    \
     Hello                   \
 
@@ -18,7 +16,7 @@ ifeq ($(shell uname), Darwin)                                        # Apple
 else ifeq ($(CI), true)                                              # Travis CI
     CXX          := g++-5
     INCLUDE      := /usr/include
-    CXXFLAGS     := -pedantic -std=c++11 -Wall
+    CXXFLAGS     := -pedantic -std=c++11 -Wall -Weffc++
     LIB          := /usr/lib
     LDFLAGS      := -lgtest -lgtest_main -pthread
     CLANG-CHECK  := clang-check
@@ -30,7 +28,7 @@ else ifeq ($(CI), true)                                              # Travis CI
 else ifeq ($(shell uname -p), unknown)                               # Docker
     CXX          := g++
     INCLUDE      := /usr/include
-    CXXFLAGS     := -pedantic -std=c++11 -Wall
+    CXXFLAGS     := -pedantic -std=c++11 -Wall -Weffc++
     LIB          := /usr/lib
     LDFLAGS      := -lgtest -lgtest_main -pthread
     CLANG-CHECK  := clang-check
@@ -42,7 +40,7 @@ else ifeq ($(shell uname -p), unknown)                               # Docker
 else                                                                 # UTCS
     CXX          := g++-4.8
     INCLUDE      := /usr/include
-    CXXFLAGS     := -pedantic -std=c++11 -Wall
+    CXXFLAGS     := -pedantic -std=c++11 -Wall -Weffc++
     LIB          := /usr/lib
     LDFLAGS      := -lgtest -lgtest_main -pthread
     CLANG-CHECK  := clang-check-3.8
@@ -55,7 +53,7 @@ endif
 
 %.app: %.c++
 	$(CXX) $(CXXFLAGS) $< -o $@
-ifneq ($(shell uname -p), unknown)                    # Docker
+ifneq ($(shell uname -p), unknown)                       # Docker
 	-$(CLANG-CHECK) -extra-arg=-std=c++11          $< --
 	-$(CLANG-CHECK) -extra-arg=-std=c++11 -analyze $< --
 endif

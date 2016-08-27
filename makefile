@@ -52,6 +52,8 @@ clean:
 	cd examples; make clean
 	@echo
 	cd exercises; make clean
+	@echo
+	cd projects/collatz; make clean
 
 config:
 	git config -l
@@ -90,6 +92,7 @@ push:
 	git add examples
 	git add exercises
 	git add makefile
+	git add projects/collatz
 	git commit -m "another commit"
 	git push
 	git status
@@ -117,6 +120,16 @@ sync:
     --include "Coverage3.c++"                \
     --exclude "*"                            \
     ../../exercises/c++/ exercises
+	@rsync -r -t -u -v --delete              \
+    --include "Collatz.c++"                  \
+    --include "Collatz.h"                    \
+    --include "RunCollatz.c++"               \
+    --include "RunCollatz.in"                \
+    --include "RunCollatz.out"               \
+    --include "TestCollatz.c++"              \
+    --include "TestCollatz.out"              \
+    --exclude "*"                            \
+    ../../projects/c++/collatz/ projects/collatz
 
 test:
 	make clean
@@ -124,6 +137,8 @@ test:
 	cd examples; make test
 	@echo
 	cd exercises; make test
+	@echo
+	cd projects/collatz; make test
 
 versions:
 	which make
@@ -140,7 +155,7 @@ versions:
 	ls -ald $(INCLUDE)/gtest
 	@echo
 	ls -al $(LIB)/*gtest*
-ifneq ($(shell uname -p), unknown)                    # Docker
+ifneq ($(shell uname -p), unknown) # Docker
 	@echo
 	which $(CLANG-CHECK)
 	$(CLANG-CHECK) --version
@@ -154,7 +169,7 @@ endif
 	@echo
 	which $(DOXYGEN)
 	$(DOXYGEN) --version
-ifneq ($(shell uname -p), unknown)                    # Docker
+ifneq ($(shell uname -p), unknown) # Docker
 	@echo
 	which $(CLANG-FORMAT)
 	$(CLANG-FORMAT) --version
