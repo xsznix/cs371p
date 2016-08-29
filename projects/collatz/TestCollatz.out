@@ -48,9 +48,3 @@ Branches executed:100.00% of 4
 Taken at least once:100.00% of 4
 No calls
 Collatz.c++:creating 'Collatz.c++.gcov'
-File 'TestCollatz.c++'
-Lines executed:100.00% of 27
-Branches executed:59.78% of 179
-Taken at least once:29.61% of 179
-No calls
-TestCollatz.c++:creating 'TestCollatz.c++.gcov'
