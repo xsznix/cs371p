@@ -1,0 +1,3 @@
+[submodule "projects/collatz/collatz-tests"]
+	path = projects/collatz/collatz-tests
+	url = git@github.com:cs371p-fall-2016/collatz-tests.git

@@ -50,6 +50,8 @@ else                                                                 # UTCS
     CLANG-FORMAT := clang-format-3.8
 endif
 
+.DEFAULT_GOAL := test
+
 %.app: %.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) $< -o $@ $(LDFLAGS)
 ifneq ($(shell uname -p), unknown)                       # Docker

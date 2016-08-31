@@ -48,6 +48,8 @@ else                                                                 # UTCS
     CLANG-FORMAT := clang-format-3.8
 endif
 
+.DEFAULT_GOAL := test
+
 clean:
 	cd examples; make clean
 	@echo
@@ -79,13 +81,11 @@ init:
 	git push -u origin master
 
 pull:
-	make clean
 	@echo
 	git pull
 	git status
 
 push:
-	make clean
 	@echo
 	git add .travis.yml
 	git add Dockerfile
@@ -98,7 +98,6 @@ push:
 	git status
 
 status:
-	make clean
 	@echo
 	git branch
 	git remote -v
@@ -132,7 +131,6 @@ sync:
     ../../projects/c++/collatz/ projects/collatz
 
 test:
-	make clean
 	@echo
 	cd examples; make test
 	@echo

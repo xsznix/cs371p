@@ -65,8 +65,7 @@ else                                                                 # UTCS
     CLANG-FORMAT := clang-format-3.8
 endif
 
-collatz-tests:
-	git clone https://github.com/cs371p-fall-2016/collatz-tests.git
+.DEFAULT_GOAL := test
 
 html: Doxyfile Collatz.h Collatz.c++ RunCollatz.c++ TestCollatz.c++
 	doxygen Doxyfile
@@ -148,10 +147,9 @@ scrub:
 	rm -rf latex
 
 status:
-	make clean
 	@echo
 	git branch
 	git remote -v
 	git status
 
-test: html Collatz.log RunCollatz.tmp TestCollatz.tmp collatz-tests check
+test: html Collatz.log RunCollatz.tmp TestCollatz.tmp check

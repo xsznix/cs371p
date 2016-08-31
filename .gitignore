@@ -1,0 +1,18 @@
+# Metadata, binaries, and gcov files
+*.gcda
+*.gcno
+*.gcov
+*.app
+*.plist
+*.dSYM
+
+# Generated files from Collatz
+projects/collatz/RunCollatz
+projects/collatz/RunCollatz.tmp
+projects/collatz/TestCollatz
+projects/collatz/TestCollatz.tmp
+
+# Generated documentation
+html
+latex
+doxygen_sqlite3.db
